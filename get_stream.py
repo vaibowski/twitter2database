@@ -6,8 +6,9 @@ import re
 
 col = pymongo.MongoClient()["tweets"]["trending"]
 
-#authenticating the API
-def fetch_data(query=['trend'],max_tweets=5):
+
+def fetch_data(query=['Trump'],max_tweets=5):
+    #authenticating the API
     api_key = '9ifeYLOoCH2qjAIPZ4fEcjlao'
     api_secret = 'BSbmY12riE84QG2XlJ24gOWMWi9Fgad0cuGLVxzLuZmYfzNKnA'
     access_token = '3466069694-TrZMbQhe5Duidvtd9N6R8UJiBBV1Uz6jaWyFBfn'
@@ -43,7 +44,7 @@ def fetch_data(query=['trend'],max_tweets=5):
                 myStream.disconnect()
                 print("Finished")
 
-    myStreamListener = Listener(max_tweets=5)
+    myStreamListener = Listener(max_tweets)
     myStream = tweepy.Stream(auth=api.auth, listener=myStreamListener)
 
     # Start a filter with an error counter of 20
