@@ -7,7 +7,7 @@ import re
 col = pymongo.MongoClient()["tweets"]["trending"]
 
 #authenticating the API
-def fetch_data(query):
+def fetch_data(query=['trend'],max_tweets=5):
     api_key = '9ifeYLOoCH2qjAIPZ4fEcjlao'
     api_secret = 'BSbmY12riE84QG2XlJ24gOWMWi9Fgad0cuGLVxzLuZmYfzNKnA'
     access_token = '3466069694-TrZMbQhe5Duidvtd9N6R8UJiBBV1Uz6jaWyFBfn'
